@@ -34,12 +34,12 @@
 ## ✨ Features
 
 ### 🎯 Core Capabilities
-- 🔍 **AI Video Analysis** — Understand performance, hook, retention
+- 🔍 **AI Video Analysis** — Understand performance, hooks, retention
 - 🗣️ **Smart Transcription** — Auto timestamps + export
 - 🎨 **Thumbnail Generator** — AI thumbnails with prompts
 - 🧠 **SEO Title Generator** — Viral + CTR-optimized titles
 - 🎥 **Script Builder** — Step-by-step YouTube script
-- 🤖 **AI Content Agent** — Ask strategies, optimisation, ideas
+- 🤖 **AI Content Agent** — Ask strategies, optimization, ideas
 
 ---
 
@@ -55,7 +55,7 @@
 ---
 
 ### 🤖 AI Integrations
-- **Google Gemini 2.0 Flash**
+- **Google Gemini (configurable)**
 - **OpenAI DALL·E**
 - **YouTube Data API**
 - **Clerk Authentication**
@@ -67,9 +67,9 @@
 > 📌 Replace these images later with real screenshots.
 
 <p align="center">
-  <img width="750" src="https://via.placeholder.com/750x400.png?text=Agentic+Studio+Dashboard"/>
+  <img width="750" src="https://via.placeholder.com/750x400.png?text=Agentic+Studio+Dashboard" alt="Dashboard placeholder"/>
   <br /><br />
-  <img width="750" src="https://via.placeholder.com/750x400.png?text=Video+Analysis+Report"/>
+  <img width="750" src="https://via.placeholder.com/750x400.png?text=Video+Analysis+Report" alt="Report placeholder"/>
 </p>
 
 ---
@@ -77,82 +77,86 @@
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js **18+**
-- npm / yarn
+- Node.js 18+
+- npm or yarn
 - Convex account
 - Clerk account
-- OpenAI API Key
-- Google Cloud Console (YouTube API)
+- API keys for the AI providers you intend to use (Gemini / OpenAI)
+- Google Cloud Console project with YouTube Data API enabled
 
 ---
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/agenticstudio.git
-   cd agenticstudio
+   git clone https://github.com/piyushthawale19/Agenticstudio.git
+   cd Agenticstudio
    ```
 
-2. **Install dependencies**
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-3. **Set up environment variables**
+3. Set up environment variables
 
    ```bash
    cp .env.local.example .env.local
    ```
 
-   Configure the following in `.env.local`:
+   Configure the following in `.env.local` (replace placeholders with your own keys — never commit secret keys):
 
    ```env
-   # Clerk Authentication
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
-   CLERK_SECRET_KEY=sk_test_...
-   CLERK_ISSUE_URL=https://your-domain.clerk.accounts.dev
+   # Clerk (authentication)
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_...
+   CLERK_SECRET_KEY=sk_live_...
+   NEXT_PUBLIC_CLERK_ISSUER_BASE_URL=https://your-clerk-domain.clerk.dev
 
-   # Convex Database
+   # Convex
    NEXT_PUBLIC_CONVEX_URL=https://your-deployment.convex.cloud
    CONVEX_DEPLOYMENT=dev:your-deployment
 
-   # AI APIs
-   GOOGLE_GENERATIVE_AI_API_KEY=AIzaSy...
-   OPENAI_API_KEY=sk-proj-...
-   GEMINI_API_KEY=AIzaSy...
-   GEMINI_API_KEY_IMG=AIzaSy...
+   # Google / Gemini
+   GOOGLE_GENERATIVE_AI_API_KEY=your-google-api-key
+
+   # OpenAI (if used)
+   OPENAI_API_KEY=sk-...
 
    # YouTube API
-   YOUTUBE_API_KEY=AIzaSy...
+   YOUTUBE_API_KEY=your-youtube-api-key
 
-   # Feature Flags (Optional)
-   NEXT_PUBLIC_SCHEMATIC_PUBLISHABLE_KEY=api_...
-   SCHEMATIC_API_KEY=sch_dev_...
+   # Optional feature flags / services
+   NEXT_PUBLIC_SCHEMATIC_PUBLISHABLE_KEY=schematic_key_here
+   SCHEMATIC_API_KEY=schematic_server_key_here
    ```
 
-4. **Set up Convex**
+   Notes:
+   - Keep secret keys out of source control.
+   - Use environment-specific secrets for production.
+
+4. Set up and run Convex locally (if developing with Convex)
 
    ```bash
    npx convex dev
    ```
 
-5. **Run the development server**
+5. Run the development server
 
    ```bash
    npm run dev
    ```
 
-6. **Open [http://localhost:3000](http://localhost:3000)**
+6. Open http://localhost:3000
 
 ---
 
 ## 📁 Project Structure
 
 ```
-agenticstudio/
+Agenticstudio/
 ├── app/                          # Next.js App Router
 │   ├── api/                      # API routes
 │   ├── video/[videoId]/          # Dynamic video analysis pages
@@ -186,53 +190,49 @@ agenticstudio/
 ## 🎨 Tech Stack
 
 ### Frontend
-
-- **Framework**: Next.js 16 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4.0
-- **UI Components**: Radix UI + Custom components
-- **State Management**: React hooks + Convex
-- **Authentication**: Clerk
+- Framework: Next.js 16 (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- UI Components: Radix UI + Custom components
+- State Management: React hooks + Convex
+- Authentication: Clerk
 
 ### Backend
-
-- **Database**: Convex (serverless)
-- **Real-time**: Convex subscriptions
-- **Authentication**: Clerk
-- **File Storage**: Convex file storage
+- Database: Convex (serverless)
+- Real-time: Convex subscriptions
+- File Storage: Convex file storage
 
 ### AI & APIs
-
-- **Language Models**: Google Gemini 2.0 Flash
-- **Image Generation**: OpenAI DALL-E
-- **Video Data**: YouTube Data API v3
-- **Feature Flags**: Schematic
+- Language Models: Google Gemini (configurable)
+- Image Generation: OpenAI DALL·E
+- Video Data: YouTube Data API v3
 
 ### DevOps
-
-- **Deployment**: Vercel
-- **Linting**: ESLint
-- **Package Manager**: npm
+- Deployment: Vercel
+- Linting: ESLint
+- Package Manager: npm
 
 ---
 
 ## 🔧 Configuration
 
-### Environment Variables
+### Environment Variables (summary)
 
-| Variable                            | Description          | Required |
-| ----------------------------------- | -------------------- | -------- |
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Clerk authentication | ✅       |
-| `CLERK_SECRET_KEY`                  | Clerk server key     | ✅       |
-| `NEXT_PUBLIC_CONVEX_URL`            | Convex database URL  | ✅       |
-| `GOOGLE_GENERATIVE_AI_API_KEY`      | Gemini API key       | ✅       |
-| `OPENAI_API_KEY`                    | OpenAI API key       | ✅       |
-| `YOUTUBE_API_KEY`                   | YouTube Data API key | ✅       |
-| `SCHEMATIC_API_KEY`                 | Feature flags        | ❌       |
+| Variable                            | Description                          | Required |
+| ----------------------------------- | ------------------------------------ | -------- |
+| NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY   | Clerk publishable key (client-side)  | ✅       |
+| CLERK_SECRET_KEY                    | Clerk secret key (server-side)       | ✅       |
+| NEXT_PUBLIC_CONVEX_URL              | Convex deployment URL                | ✅       |
+| GOOGLE_GENERATIVE_AI_API_KEY        | Gemini / Google AI API key           | ✅       |
+| OPENAI_API_KEY                      | OpenAI API key (if used)             | ❌*      |
+| YOUTUBE_API_KEY                     | YouTube Data API key                 | ✅       |
+| SCHEMATIC_API_KEY                   | Feature flag service (optional)      | ❌       |
+
+\* OPENAI_API_KEY is optional if you only use Google Gemini.
 
 ### Feature Flags
 
-Control available features using Schematic:
+Control available features using Schematic (example):
 
 ```typescript
 enum FeatureFlag {
@@ -248,29 +248,22 @@ enum FeatureFlag {
 
 ## 🚀 Deployment
 
-### Vercel Deployment
+### Vercel
+1. Connect your repository to Vercel.
+2. Set environment variables in the Vercel dashboard.
+3. Deploy Convex to production:
 
-1. **Connect your repository**
+```bash
+npx convex deploy --prod
+```
 
-   ```bash
-   npx vercel
-   ```
+4. Deploy to production on Vercel:
 
-2. **Set environment variables** in Vercel dashboard
+```bash
+npx vercel --prod
+```
 
-3. **Deploy Convex**
-
-   ```bash
-   npx convex deploy --prod
-   ```
-
-4. **Deploy to production**
-   ```bash
-   npx vercel --prod
-   ```
-
-### Convex Deployment
-
+### Convex
 ```bash
 # Development
 npx convex dev
@@ -283,16 +276,14 @@ npx convex deploy --prod
 
 ## 📊 Usage & Analytics
 
-### Token System
-
-- **Video Analysis**: 1 token per video
-- **Title Generation**: 1 token per title
-- **Thumbnail Generation**: 1 token per image
-- **Transcription**: 1 token per video
-- **AI Chat**: Variable based on conversation length
+### Token System (example)
+- Video Analysis: 1 token per video
+- Title Generation: 1 token per title
+- Thumbnail Generation: 1 token per image
+- Transcription: 1 token per video
+- AI Chat: Variable based on conversation length
 
 ### Real-time Monitoring
-
 - Live token consumption tracking
 - Feature usage analytics
 - Performance metrics
@@ -308,7 +299,6 @@ npx convex deploy --prod
 5. Open a Pull Request
 
 ### Development Guidelines
-
 - Use TypeScript for all new code
 - Follow ESLint configuration
 - Write meaningful commit messages
@@ -325,20 +315,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Next.js** - The React framework
-- **Convex** - Serverless database
-- **Clerk** - Authentication platform
-- **Google AI** - Gemini models
-- **OpenAI** - DALL-E image generation
-- **Vercel** - Deployment platform
+- Next.js - The React framework
+- Convex - Serverless database
+- Clerk - Authentication platform
+- Google AI - Gemini models
+- OpenAI - DALL·E image generation
+- Vercel - Deployment platform
 
 ---
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/agenticstudio/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/agenticstudio/discussions)
-- **Email**: support@agenticstudio.com
+- Issues: https://github.com/piyushthawale19/Agenticstudio/issues
+- Discussions: https://github.com/piyushthawale19/Agenticstudio/discussions
+- Email: support@agenticstudio.com
 
 ---
 
@@ -351,6 +341,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     <a href="#contributing">Contributing</a>
   </p>
 </div>
-#   A g e n t i c s t u d i o 
- 
- 
