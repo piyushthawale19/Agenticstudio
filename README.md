@@ -1,17 +1,32 @@
-# 🎬 Agentic Studio - AI-Powered YouTube Content Agent
+# 🎬 Agentic Studio – AI-Powered YouTube Content Agent
+
+<br />
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Next.js-16.0.3-black" alt="Next.js" />
-  <img src="https://img.shields.io/badge/React-19.2.0-blue" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind-4.0-blue" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/Convex-1.29.1-green" alt="Convex" />
-  <img src="https://img.shields.io/badge/Clerk-6.35.1-red" alt="Clerk" />
+
+<img src="https://img.shields.io/badge/Next.js-16.0.3-black" />
+<img src="https://img.shields.io/badge/React-19.2.0-blue" />
+<img src="https://img.shields.io/badge/TypeScript-5.0-blue" />
+<img src="https://img.shields.io/badge/TailwindCSS-4.0-blue" />
+<img src="https://img.shields.io/badge/Convex-1.29.1-green" />
+<img src="https://img.shields.io/badge/Clerk-6.35.1-red" />
+
 </div>
 
+<br />
+
+<p align="center">
+  <img width="1000" src="https://raw.githubusercontent.com/piyushthawale19/Agenticstudio/main/banner.png" alt="Agentic Studio Banner"/>
+</p>
+
 <div align="center">
-  <h3>Transform your YouTube content with AI-powered analysis, transcription, and creative assistance</h3>
-  <p>🚀 Get started in seconds • 🤖 AI-driven insights • 📊 Real-time analytics • 🎨 Creative generation</p>
+  <h3>Transform your YouTube content with AI-powered analysis, transcription & creative tools</h3>
+  <p>🚀 Publish better videos • 🤖 AI insights • 📊 Real-time analytics • 🎨 AI thumbnails & scripts</p>
+  <br />
+  <a href="#🚀-quick-start"><b>⚡ Get Started</b></a> •
+  <a href="#✨-features"><b>✨ Features</b></a> •
+  <a href="#🎨-tech-stack"><b>🛠️ Tech Stack</b></a> •
+  <a href="#🤝-contributing"><b>🤝 Contributing</b></a>
 </div>
 
 ---
@@ -19,41 +34,57 @@
 ## ✨ Features
 
 ### 🎯 Core Capabilities
+- 🔍 **AI Video Analysis** — Understand performance, hook, retention
+- 🗣️ **Smart Transcription** — Auto timestamps + export
+- 🎨 **Thumbnail Generator** — AI thumbnails with prompts
+- 🧠 **SEO Title Generator** — Viral + CTR-optimized titles
+- 🎥 **Script Builder** — Step-by-step YouTube script
+- 🤖 **AI Content Agent** — Ask strategies, optimisation, ideas
 
-- **AI Video Analysis** - Deep insights into content performance and engagement
-- **Smart Transcription** - Accurate video transcriptions with timestamps
-- **Thumbnail Generation** - AI-powered eye-catching thumbnail creation
-- **Title Generation** - SEO-optimized, attention-grabbing title suggestions
-- **Script Generation** - Step-by-step shooting scripts for content recreation
-- **AI Agent Chat** - Interactive conversations about your content strategy
+---
 
 ### 🔧 Technical Features
+- ⚡ Real-Time Updates (Convex Subscriptions)
+- 💠 Feature Flags (Schematic)
+- 🪙 Usage Tokens Per Action
+- 🌓 Dark / Light Mode
+- 📱 Fully Responsive
+- 🔐 Secure Auth via Clerk
+- ☁️ Convex Storage (Images & transcripts)
 
-- **Real-time Updates** - Live polling for instant results
-- **Feature Flags** - Granular control over available features
-- **Usage Tracking** - Token-based consumption monitoring
-- **Responsive Design** - Works seamlessly on all devices
-- **Dark/Light Mode** - Theme switching support
+---
 
-### 🤖 AI Integration
+### 🤖 AI Integrations
+- **Google Gemini 2.0 Flash**
+- **OpenAI DALL·E**
+- **YouTube Data API**
+- **Clerk Authentication**
 
-- **Google Gemini 2.0 Flash** - Advanced language model for content analysis
-- **OpenAI DALL-E** - High-quality image generation
-- **YouTube Data API** - Comprehensive video metadata extraction
-- **Clerk Authentication** - Secure user management
+---
+
+## 🖼️ UI Preview
+
+> 📌 Replace these images later with real screenshots.
+
+<p align="center">
+  <img width="750" src="https://via.placeholder.com/750x400.png?text=Agentic+Studio+Dashboard"/>
+  <br /><br />
+  <img width="750" src="https://via.placeholder.com/750x400.png?text=Video+Analysis+Report"/>
+</p>
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+
-- npm or yarn
+- Node.js **18+**
+- npm / yarn
 - Convex account
 - Clerk account
-- Google Cloud Console (for YouTube API)
-- OpenAI API key
+- OpenAI API Key
+- Google Cloud Console (YouTube API)
+
+---
 
 ### Installation
 
@@ -320,5 +351,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     <a href="#contributing">Contributing</a>
   </p>
 </div>
-#   A g e n t i c s t u d i o  
+#   A g e n t i c s t u d i o 
+ 
  
